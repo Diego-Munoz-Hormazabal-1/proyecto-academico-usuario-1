@@ -1,0 +1,36 @@
+### USUARIO - LISTAR
+GET http://localhost:5000/usuarios
+
+
+### USUARIO - CREAR
+POST http://localhost:5000/usuarios
+Content-Type: application/json
+
+{
+  "nombre": "Diego Munoz H",
+  "email": "diegom@gmail", 
+  "password": "1234",
+  "rol": "ESTUDIANTE"
+}
+
+
+### USUARIO - BUSCAR POR ID
+GET http://localhost:5000/usuarios/23
+
+
+//correo tambien es unico
+### USUARIO - ACTUALIZAR
+PUT http://localhost:5000/usuarios/19
+Content-Type: application/json
+
+{
+  "nombre": "Julio",
+  "email": "juan@correo.caaa",
+  "password": "123456",
+  "rol": "Alumno"
+  
+}
+
+
+### USUARIO - ELIMINAR
+DELETE http://localhost:5000/usuarios/20
