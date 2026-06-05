@@ -1,36 +1,54 @@
-### USUARIO - LISTAR
-GET http://localhost:5000/usuarios
-
-
-### USUARIO - CREAR
-POST http://localhost:5000/usuarios
+### A. REGISTRAR UN USUARIO (Ruta Pública)
+POST http://localhost:5000/auth/register
 Content-Type: application/json
 
 {
-  "nombre": "Diego Munoz H",
-  "email": "diegom@gmail", 
-  "password": "1234",
+  "nombre": "Eduardo weko maximo",
+  "email": "eduue@correeo.cl",
+  "password": "claveSegura123",
+  "rol": "ESTUDIANTE"
+}
+
+### B. LOGIN (Aquí es donde generas el token)
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email": "eduue@correeo.cl",
+  "password": "claveSegura123"
+}
+
+### --------------------------------------------------
+
+
+### 1. USUARIO - LISTAR
+GET http://localhost:5000/usuarios
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2wiOiJFU1RVRElBTlRFIiwic3ViIjoiZWR1dWVAY29ycmVlby5jbCIsImlhdCI6MTc4MDU4OTk0MSwiZXhwIjoxNzgwNTkzNTQxfQ.foOGpw3VZydcQ0XpBF-dvkGUHO3bdUDjQW9T2sgpellADgcj_nDOSZ3w-6aahpBt
+
+
+
+### 3. USUARIO - BUSCAR POR ID
+GET http://localhost:5000/usuarios/28
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2wiOiJFU1RVRElBTlRFIiwic3ViIjoiZGllZ29AY29ycmVvLmNsIiwiaWF0IjoxNzgwNTg3ODgxLCJleHAiOjE3ODA1OTE0ODF9.02qvd88gmo-Ht5c2ndwHOB7qymSS3KPVTYoLuIBn4MYy2X9_ahMlp74q0DQCKED-
+
+
+
+
+### 4. USUARIO - ACTUALIZAR
+PUT http://localhost:5000/usuarios/39
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2wiOiJFU1RVRElBTlRFIiwic3ViIjoiZWR1dWVAY29ycmVlby5jbCIsImlhdCI6MTc4MDU4OTk0MSwiZXhwIjoxNzgwNTkzNTQxfQ.foOGpw3VZydcQ0XpBF-dvkGUHO3bdUDjQW9T2sgpellADgcj_nDOSZ3w-6aahpBt
+
+
+
+{
+  "nombre": "Diego mejor DEV",
+  "email": "diego@correo.caaa",
+  "password": "123456",
   "rol": "ESTUDIANTE"
 }
 
 
-### USUARIO - BUSCAR POR ID
-GET http://localhost:5000/usuarios/23
-
-
-//correo tambien es unico
-### USUARIO - ACTUALIZAR
-PUT http://localhost:5000/usuarios/19
-Content-Type: application/json
-
-{
-  "nombre": "Julio",
-  "email": "juan@correo.caaa",
-  "password": "123456",
-  "rol": "Alumno"
-  
-}
-
-
-### USUARIO - ELIMINAR
-DELETE http://localhost:5000/usuarios/20
+### 5. USUARIO - ELIMINAR
+DELETE http://localhost:5000/usuarios/39
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJyb2wiOiJFU1RVRElBTlRFIiwic3ViIjoiZWR1dWVAY29ycmVlby5jbCIsImlhdCI6MTc4MDU4OTk0MSwiZXhwIjoxNzgwNTkzNTQxfQ.foOGpw3VZydcQ0XpBF-dvkGUHO3bdUDjQW9T2sgpellADgcj_nDOSZ3w-6aahpBt
